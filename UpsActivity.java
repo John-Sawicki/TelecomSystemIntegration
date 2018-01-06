@@ -11,7 +11,7 @@ import android.widget.Toast;
 //need settings to UPS power factor and voltage. Assuming 0.9 pf and 120VAC
 public class UpsActivity extends AppCompatActivity {
     Button calc, clear;
-    EditText wattage1, qty1, wattage2, qty2;
+    EditText equipment1, equipment2, wattage1, qty1, wattage2, qty2;
     TextView total1,total2, grandTotalW, voltAmpTotal, breakerSize;
     String value_wattage1, value_quantity1,value_wattage2, value_quantity2 ;
     double power_factor =0.9, double_VA_total, double_value_VA_total, doubleVoltage, doubleAmps ;
@@ -20,9 +20,11 @@ public class UpsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ups);
+        equipment1= (EditText)findViewById(R.id.equipment_one);
         wattage1 = (EditText)findViewById(R.id.wattage_one);
         qty1 = (EditText)findViewById(R.id.quantity_one);
         total1 = (TextView) findViewById(R.id.total_one);
+        equipment2= (EditText)findViewById(R.id.equipment_two);
         wattage2 = (EditText)findViewById(R.id.wattage_two);
         qty2 = (EditText)findViewById(R.id.quantity_two);
         total2 = (TextView) findViewById(R.id.total_two);
@@ -84,6 +86,8 @@ public class UpsActivity extends AppCompatActivity {
         clear.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                equipment1.setText("");equipment2.setText(""); wattage1.setText(""); qty1.setText(""); wattage2.setText(""); qty2.setText("");
+                total1.setText(""); total2.setText(""); grandTotalW.setText(""); voltAmpTotal.setText(""); breakerSize.setText("");
                 value_breaker=0;
             }
         });
