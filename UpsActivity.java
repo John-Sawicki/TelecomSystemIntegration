@@ -12,7 +12,8 @@ import android.widget.Toast;
 public class UpsActivity extends AppCompatActivity {
     Button calc, clear;
     EditText equipment1, equipment2, wattage1, qty1, wattage2, qty2;
-    TextView total1,total2, grandTotalW, voltAmpTotal, breakerSize;
+    EditText class1, class2, class3, class4, class6;
+    TextView total1,total2, grandTotalW, voltAmpTotal, breakerSize, poeClassTotal;
     String value_wattage1, value_quantity1,value_wattage2, value_quantity2 ;
     double power_factor =0.9, double_VA_total, double_value_VA_total, doubleVoltage, doubleAmps ;
      int lineTotal1=0, wattageInt1=0, quantityInt1=0, lineTotal2=0, wattageInt2=0, quantityInt2=0, value_wattage_total =0, value_VA_total=0,  amps =9, value_breaker=2, voltage=120;
